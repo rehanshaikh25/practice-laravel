@@ -61,7 +61,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
+        $validatedData = $request->validate([
+            'title' => 'required|max:225'
+        ]);
+        $product->update($validatedData);
         return redirect()->route('products.index');
     }
 
