@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource("/admin/products", ProductController::class);
+    Route::resource('products', ProductController::class);
 });
 
 Route::view('dashboard', 'dashboard')

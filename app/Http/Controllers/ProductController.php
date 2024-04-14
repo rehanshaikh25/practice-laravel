@@ -37,7 +37,7 @@ class ProductController extends Controller
     
         Product::create($validated);
     
-        return redirect('/products');
+        return redirect('/');
     }
 
     /**
