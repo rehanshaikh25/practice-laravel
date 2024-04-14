@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
 // Route::view('/', 'welcome');
+Route::redirect('/', '/products');
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('products', ProductController::class);
+    Route::resource('/products', ProductController::class);
 });
 
 Route::view('dashboard', 'dashboard')
